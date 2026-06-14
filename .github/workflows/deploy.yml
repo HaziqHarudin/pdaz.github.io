@@ -28,7 +28,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --include=optional
+
+      - name: Install React explicitly
+        run: pnpm add react@18.3.1 react-dom@18.3.1
 
       - name: Build project
         run: pnpm run build
